@@ -58,7 +58,7 @@ jobs:
           git config --global user.email "hellorosss@gmail.com"
           git config --global user.name "rsbear"
           cd package
-          yarn publish --@rsbear:registry=https://npm.pkg.github.com/
+          yarn publish --@rsbear:registry=https://npm.pkg.github.com/ --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.gh_token}}
   
