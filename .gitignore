@@ -1,0 +1,14 @@
+  
+node_modules
+.cache
+.npmrc
+.yalc
+.DS_Store
+docsapp/.next
+docsapp/.now
+docsapp/out
+lib
+yarn-error.log
+yalc.lock
+yarn.lock
+dist
