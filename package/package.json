@@ -1,6 +1,6 @@
 {
   "name": "@rsbear/betsy",
-  "version": "0.0.84",
+  "version": "0.0.85",
   "description": "style with style",
   "main": "dist/betsy.js",
   "browser": "dist/betsy.umd.js",
