@@ -16,14 +16,14 @@ export interface IconProps extends SvgProps {
   strokeWidth?: number | string;
 }
 
-const IconContainer = styled.div<SvgProps>`
-  height: ${p => (p.size ? p.size : "24px")};
-  max-width: ${p => (p.size ? p.size : "24px")};
+const IconContainer = styled.div<SvgProps | any>`
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: ${p => p.cursor};
   ${space}
+  height: ${p => (p.size ? p.size : "24px")};
+  max-width: ${p => (p.size ? p.size : "24px")};
+  cursor: ${p => p.cursor};
 `;
 
 export const Icon: React.FC<IconProps> = props => {
