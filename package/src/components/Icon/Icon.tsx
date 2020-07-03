@@ -1,25 +1,24 @@
 import React from "react";
 import { IconEnum } from "./iconEnumType";
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 import { space, SpaceProps } from "styled-system";
 
 interface SvgProps extends SpaceProps {
   cursor?: "none" | "pointer" | "disabled" | "default";
-  size?: number;
+  size?: string;
 }
 
 export interface IconProps extends SvgProps {
   icon: IconEnum | string;
   color?: string;
   fill?: string;
-  size?: number;
   stroke?: string;
   strokeWidth?: number | string;
 }
 
 const IconContainer = styled.div<SvgProps>`
-  height: ${p => (p.size ? `${p.size}px` : "24px")};
-  max-width: ${p => (p.size ? `${p.size}px` : "24px")};
+  height: ${p => (p.size ? p.size : "24px")};
+  max-width: ${p => (p.size ? p.size : "24px")};
   display: flex;
   justify-content: center;
   align-items: center;
