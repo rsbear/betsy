@@ -1,14 +1,14 @@
 import React from "react";
 import { Icon } from "../Icon";
 import { Sans } from "../Sans";
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 import { space, SpaceProps } from "styled-system";
 
 export interface RadioContainerProps extends SpaceProps {
   activeColor?: string;
   className?: string;
   color?: string;
-  size?: number;
+  size?: string;
 }
 
 export interface RadioProps extends RadioContainerProps {
@@ -62,7 +62,7 @@ export const Radio: React.FC<RadioProps> = props => {
     >
       <Icon
         icon={!active ? "circle" : "check-circle"}
-        size={!size ? 18 : size}
+        size={!size ? "18px" : size}
         mr={!spacing ? "10px" : spacing}
       />
       <Sans fontSize={fontSize} fontWeight={fontWeight} color={textColor}>

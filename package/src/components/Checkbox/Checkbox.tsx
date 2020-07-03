@@ -1,14 +1,14 @@
 import React from "react";
 import { Icon } from "../Icon";
 import { Sans } from "../Sans";
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 import { space, SpaceProps } from "styled-system";
 
 export interface CheckboxContainerProps extends SpaceProps {
   activeColor?: string;
   className?: string;
   color?: string;
-  size?: number;
+  size?: string;
   key?: string | number;
 }
 
@@ -63,7 +63,7 @@ export const Checkbox: React.FC<CheckboxProps> = props => {
     >
       <Icon
         icon={!active ? "square" : "check-square"}
-        size={!size ? 18 : size}
+        size={!size ? "18px" : size}
         mr={!spacing ? "10px" : spacing}
       />
       <Sans fontSize={fontSize} fontWeight={fontWeight} color={textColor}>
