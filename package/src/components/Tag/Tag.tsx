@@ -1,6 +1,6 @@
 import React from "react";
 import { Icon } from "../Icon";
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 import {
   border,
   BorderProps,
@@ -89,7 +89,9 @@ export const Tag: React.FC<TagProps> = ({
     >
       <span>{text}</span>
       <div className={!active ? undefined : "divider"} />
-      {active && <Icon icon="x" size={10} color={!color ? "#474747" : color} />}
+      {active && (
+        <Icon icon="x" size="10px" color={!color ? "#474747" : color} />
+      )}
     </TagContainer>
   );
 };
