@@ -20,9 +20,15 @@ const IconContainer = styled.div<SvgProps | any>`
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 24px;
+  max-width: 24px;
   ${space}
-  height: ${p => (p.size ? p.size : "24px")};
-  max-width: ${p => (p.size ? p.size : "24px")};
+  ${props =>
+    props.size &&
+    `
+    height: ${props.size};
+    max-width: ${props.size};
+  `}
   cursor: ${p => p.cursor};
 `;
 
