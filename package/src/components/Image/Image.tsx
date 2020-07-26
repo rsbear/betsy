@@ -1,5 +1,5 @@
 import React from "react";
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
 export interface OuterProps {
   shadow?: string;
@@ -9,6 +9,7 @@ export interface OuterProps {
 export interface ImageProps extends OuterProps {
   alt?: string;
   src: string;
+  backgroundColor?: string;
 }
 
 const Outer = styled.div<OuterProps>`
@@ -48,6 +49,8 @@ const Outer = styled.div<OuterProps>`
     right: 0;
     bottom: 0;
     left: 0;
+    background-color: ${props =>
+      props.backgroundColor ? props.backgroundColor : "transparent"}
   }
   
   `}
@@ -60,9 +63,15 @@ const Img = styled.img`
   object-position: 50% 50%;
 `;
 
-export const Image: React.FC<ImageProps> = ({ shadow, shape, src, alt }) => {
+export const Image: React.FC<ImageProps> = ({
+  backgroundColor,
+  shadow,
+  shape,
+  src,
+  alt
+}) => {
   return (
-    <Outer shape={shape} shadow={shadow}>
+    <Outer shape={shape} shadow={shadow} backgroundColor={backgroundColor}>
       <div className="inner">
         <Img src={src} alt={!alt ? "" : alt} />
       </div>
