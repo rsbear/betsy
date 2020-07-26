@@ -4,12 +4,12 @@ import styled from "@emotion/styled";
 export interface OuterProps {
   shadow?: string;
   shape: "rect" | "square";
+  backgroundColor?: string;
 }
 
 export interface ImageProps extends OuterProps {
   alt?: string;
   src: string;
-  backgroundColor?: string;
 }
 
 const Outer = styled.div<OuterProps>`
