@@ -11,7 +11,7 @@ import {
   TypographyProps,
   typography
 } from "styled-system";
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
 interface ContainerProps
   extends ColorStyleProps,
@@ -33,8 +33,11 @@ export interface InputProps extends ContainerProps {
   iconRight?: JSX.Element;
   label?: string;
   onChange: React.ChangeEventHandler<HTMLInputElement>;
+  name?: any;
   placeholder?: string;
   role?: "text" | "password" | "number";
+  value?: any;
+  tabIndex?: any;
 }
 
 const Container = styled.div<ContainerProps>`
@@ -89,6 +92,8 @@ export const Input: React.FC<InputProps> = props => {
       <input
         placeholder={placeholder}
         onChange={onChange}
+        value={!props.value ? undefined : props.value}
+        name={!props.name ? undefined : props.name}
         type={role ? role : "text"}
       />
       {props.iconRight && props.iconRight}
