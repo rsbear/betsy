@@ -52,7 +52,6 @@ export interface ButtonProps extends ButtonStyleProps {
   loading?: boolean;
   loader?: JSX.Element;
   onClick?: any;
-  name?: string;
   role?: "button" | "submit";
   text: string;
 }
@@ -160,12 +159,7 @@ export const Button: React.FC<ButtonProps | any> = props => {
   return (
     <>
       {!loading ? (
-        <ButtonStyle
-          name={!name ? "" : props.name}
-          onClick={onClick}
-          type={!role ? "button" : role}
-          {...rest}
-        >
+        <ButtonStyle onClick={onClick} type={!role ? "button" : role} {...rest}>
           {icon && icon}
           {!loading ? text : loaderNull}
           {iconRight && iconRight}
