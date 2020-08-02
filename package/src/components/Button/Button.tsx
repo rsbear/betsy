@@ -161,7 +161,7 @@ export const Button: React.FC<ButtonProps | any> = props => {
     <>
       {!loading ? (
         <ButtonStyle
-          name={!name ? undefined : props.name}
+          name={!name ? "" : props.name}
           onClick={onClick}
           type={!role ? "button" : role}
           {...rest}
