@@ -1,8 +1,8 @@
 import React from "react";
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 import { space, SpaceProps } from "styled-system";
 
-export interface GridProps {
+export interface GridProps extends SpaceProps {
   preset?: 1 | 2 | 3 | 4 | 5;
   rowGap?: number;
   columnGap?: number;
