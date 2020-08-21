@@ -1,11 +1,11 @@
 import React from "react";
-import styled from '@emotion/styled'
-import { keyframes } from '@emotion/core'
+import styled from "@emotion/styled";
+import { keyframes } from "@emotion/core";
 
 export interface LoadingSpinnerProps {
   color?: string;
-  size?: number;
-  strokeWidth?: number;
+  size?: string;
+  strokeWidth?: string;
 }
 
 const spin = keyframes`
@@ -15,27 +15,27 @@ const spin = keyframes`
 
 const Spinner = styled.div<LoadingSpinnerProps>`
   display: flex;
-  height: ${(p) => (p.size ? p.size : "24px")};
-  width: ${(p) => (p.size ? p.size : "24px")};
+  height: ${p => (p.size ? p.size : "24px")};
+  width: ${p => (p.size ? p.size : "24px")};
   justify-content: center;
   align-items: center;
 
   .loader {
-    height: ${(p) => (p.size ? p.size : "24px")};
-    width: ${(p) => (p.size ? p.size : "24px")};
-    border: ${(p) => (p.strokeWidth ? p.strokeWidth : "2px")} solid
+    height: ${p => (p.size ? p.size : "24px")};
+    width: ${p => (p.size ? p.size : "24px")};
+    border: ${p => (p.strokeWidth ? p.strokeWidth : "2px")} solid
       rgba(0, 174, 239, 0.2);
-    border-top-color: ${(p) => (p.color ? p.color : "white")};
+    border-top-color: ${p => (p.color ? p.color : "white")};
     border-radius: 100%;
     animation: ${spin} 800ms infinite linear 0.25s;
   }
 `;
 
-export const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
+export const LoadingSpinner = ({
   color,
   size,
-  strokeWidth,
-}) => (
+  strokeWidth
+}: LoadingSpinnerProps) => (
   <Spinner color={color} size={size} strokeWidth={strokeWidth}>
     <div className="loader"></div>
   </Spinner>
